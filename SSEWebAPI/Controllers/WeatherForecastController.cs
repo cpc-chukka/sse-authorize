@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace SSEWebAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -34,7 +35,6 @@ namespace SSEWebAPI.Controllers
             .ToArray();
         }
 
-        //[Authorize]
         [HttpGet("/sse/GetSSEWeatherForecast")]
         public async Task GetSSEAsync()
         {
